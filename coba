@@ -171,14 +171,14 @@
 					} else {
 						cout<<"MASUKKAN JUMLAH BARANG LEBIH DARI 0";
 					}
-					cout<<"Kembali Ke Menu : 1. Ya \n";
-					cout<<"                  2. Tidak\n";
+					cout<<"\n1. Tambah Barang\n";
+					cout<<"2. Kembali Ke Menu\n";
 					cout<<"Pilih : ";
 					cin>>pil;
 					if (pil == 1 ){
-						goto menu;
+						goto ya;
 					}else if (pil == 2){
-						goto end;
+						goto menu;
 					} else {
 						cout<<"EROR";
 						system("pause");
@@ -222,11 +222,14 @@
 					cout<<"Pilih : ";
 					cin>>pil;
 					if (pil == 1 ){
-						cout<< "+"<<setfill('-')<<setw(30)<<"="<<endl;
-						cout<<"    TOKO BANGUNAN MADUKESMO \n";
-						cout<<"Madukismo No. 45 Yogyakarta Indonesia\n";
-						cout<< "+"<<setfill('-')<<setw(30)<<"="<<endl;
-				
+						system("cls");
+						cout << "\t =============================================" << endl;
+						cout << "\t |           TOKO BANGUNAN MADUKESMO         |" << endl;
+						cout << "\t |   Madukismo No. 45 Yogyakarta Indonesia\n  " << endl;
+						cout << "\t =============================================\n" << endl;
+						cout << "+" << setfill('-') << setw(64) << "+" << endl;
+						cout<<"|          	Barang	       	    |      Jumlah  	|      Harga  	|"<<endl;	
+						cout << "+" << setfill('-') << setw(64) << "+" << endl;
 					}else if (pil == 2){
 						goto end;
 					} else {
