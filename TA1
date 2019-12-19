@@ -1,0 +1,370 @@
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+		int totalm=0,totaln=0,pilih, p_makan, p_minum, h_makan[10], h_minum[10], jml_makan, jml_minum, total_mkn=0, total_mnm=0, total,uang,i=-1,j=-1,k=0,l=0,m=0,strukh[99][2];
+		string struk[99];
+		char keluar='n', a='y';
+		bool pesan=false;
+void makan();
+void minum();
+int main() 
+{
+		
+do{if(a=='n'){totalm=0;totaln=0;a=0;pesan=false;i=-1;j=-1;}keluar=0;
+	system("cls");
+		cout<<"=====MARIZINI RESTAURANT====="<<endl;
+		cout<<"|\t Menu:\t\t\t|";
+		cout<<"\n1. Makanan"<<endl;
+		cout<<"2. Minuman"<<endl;
+		cout<<"3. Bayar"<<endl;
+		cout<<"Pilihan: ";
+		cin>>pilih;
+		
+		switch(pilih)
+		{
+			case 1 :
+				makan();
+				break;
+			case 2: 
+				minum();
+				break;
+			case 3: 
+			if(pesan==false){cout<<"Anda belum memesan!"<<endl;a='n';system("pause");}
+			else
+			{
+				cout<<"Menu Bayar\n";
+				total=totalm+totaln;
+				for(l=0;l<=j;l++){cout<<struk[l]<<" ";for(m=0;m<2;m++){cout<<strukh[l][m]<<" ";}cout<<endl;}
+				cout<<"\nTotal yang harus dibayar: "<<total;
+				cout<<"\nJumlah Uang Anda:";cin>>uang;
+				if(uang>=total)
+				{
+					cout<<"kembalian:"<<uang-total;cout<<"\nSelesai? (y/n)";cin>>a;
+				}
+				else {cout<<"uang anda tidak cukup"<<"\nSelesai? (y/n)";cin>>a;}
+				
+			}
+			break;
+		}
+}while(a=='n'||a=='N'||keluar=='n');}
+
+
+void makan(){
+				do{
+				system("cls");
+				cout<<"          ==MENU MAKANAN=="<<endl;
+				cout<<"1. Nasi Telor: Rp.6000"<<endl;
+				cout<<"2. Nasi Ayam: Rp.8000"<<endl;
+				cout<<"3. Mie Goreng TANTE: Rp.4000"<<endl;
+				cout<<"4. Mie Rebus TANTE: Rp.4000"<<endl;
+				cout<<"5. Mie Goreng Telor: Rp.6000"<<endl;
+				cout<<"6. Mie Rebus Telor: Rp.6000"<<endl;
+				cout<<"7. Nasi Goreng: Rp.8000"<<endl;
+				cout<<"8. Magelangan: Rp.9000"<<endl;
+				cout<<"Pilihan: ";
+				cin>>p_makan;
+			switch (p_makan){
+				case 1 : 
+					system("cls");
+					cout<<"Nasi Telor";
+					h_makan[0]=6000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[0];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Nasi Telor";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					
+					break;
+				case 2 :
+					system("cls");
+					cout<<"Nasi Ayam";
+					h_makan[1]=8000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[1];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Nasi Ayam";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 3 :
+					system("cls");
+					cout<<"Mie Goreng TANTE";
+					h_makan[2]=4000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[2];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Mie Goreng TANTE";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 4 :
+					system("cls");
+					cout<<"Mie Rebus TANTE";
+					h_makan[3]=4000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[3];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Mie Rebus TANTE";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 5 :
+					system("cls");
+					cout<<"Mie Goreng Telor";
+					h_makan[4]=6000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[4];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Mie Goreng Telor";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 6 :
+					system("cls");
+					cout<<"Mie Rebus Telor";
+					h_makan[5]=6000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[5];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Mie Rebus Telor";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 7 :
+					system("cls");
+					cout<<"Nasi Goreng";
+					h_makan[6]=8000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[6];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Nasi Goreng";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;
+				case 8 :
+					system("cls");
+					cout<<"Magelangan";
+					h_makan[7]=9000;
+					cout<<"\nJumlah: ";
+					cin>>jml_makan;
+					total_mkn=jml_makan*h_makan[7];
+					cout<<"Total: "<<total_mkn;
+					totalm = totalm+total_mkn;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Magelangan";
+					strukh[j][k]=jml_makan;
+					k++;
+					strukh[j][k]=total_mkn;
+					break;	
+					}
+					pesan=true;cout<<"\nIngin tambah makan? (y/n) : ";
+					cin>>keluar;
+				}while(keluar=='y'||keluar=='Y');
+				
+}
+
+void minum(){
+				do{
+				system("cls");
+				cout<<"          ==MENU MINUM=="<<endl;
+				cout<<"1. Es Teh: Rp.2000"<<endl;
+				cout<<"2. Es Jeruk: Rp.3000"<<endl;
+				cout<<"3. Es Susu: Rp.3000"<<endl;
+				cout<<"4. Jus Melon: Rp.5000"<<endl;
+				cout<<"5. Jus Alpukat: Rp.6000"<<endl;
+				cout<<"6. Soda Gembira: Rp.10000"<<endl;
+				cout<<"7. Es Campur: Rp.7000"<<endl;
+				cout<<"8. Jus Mangga: Rp.6000"<<endl;
+				cout<<"Pilihan: ";
+				cin>>p_minum;
+				switch(p_minum){
+					case 1: 
+					system("cls");
+					cout<<"Es Teh";
+					h_minum[0]=2000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[0];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Es Teh";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 2: 
+					system("cls");
+					cout<<"Es Jeruk";
+					h_minum[1]=3000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[1];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Es Jeruk";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 3: 
+					system("cls");
+					cout<<"Es Susu";
+					h_minum[2]=3000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[2];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Es Susu";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 4: 
+					system("cls");
+					cout<<"Jus Melon";
+					h_minum[3]=5000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[3];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Jus Melon";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 5: 
+					system("cls");
+					cout<<"Jus Alpukat";
+					h_minum[4]=6000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[4];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Jus Alpukat";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 6: 
+					system("cls");
+					cout<<"Soda Gembira";
+					h_minum[5]=10000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[5];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Soda Gembira";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 7: 
+					system("cls");
+					cout<<"Es Campur";
+					h_minum[6]=7000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[6];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Es Campur";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					case 8: 
+					system("cls");
+					cout<<"Jus Mangga";
+					h_minum[7]=6000;
+					cout<<"\nJumlah: ";
+					cin>>jml_minum;
+					total_mnm=jml_minum*h_minum[7];
+					cout<<"\nTotal Biaya Minum: "<<total_mnm;
+					totaln=totaln+total_mnm;
+					j++;
+					i++;
+					k=0;
+					struk[i]="-Jus Mangga";
+					strukh[j][k]=jml_minum;
+					k++;
+					strukh[j][k]=total_mnm;
+					break;
+					}
+					pesan=true;cout<<"\nIngin tambah makan? (y/n) : ";
+					cin>>keluar;
+				}while(keluar=='y'||keluar=='Y');
+}
+	
+			
+
