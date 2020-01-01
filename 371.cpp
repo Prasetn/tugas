@@ -117,7 +117,7 @@ int main (){
 	cout<<"2. Tarik Tunia\n";
 	cout<<"3. Transfer\n";
 	cout<<"4. Isi Saldo\n";
-	cout<<"5. Keluar";
+	cout<<"5. Keluar\n";
 	cout<<"Masukkan Pilihan : ";
 	cin>>atm.pilih;
 	
